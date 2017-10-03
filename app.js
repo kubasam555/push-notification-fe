@@ -23,4 +23,8 @@ var config = {
 
   messaging.onMessage(function(payload) {
       console.log('onMessage: ', payload);
+      $('#title').text(payload.notification.title);
+      $('#message').text(payload.notification.body);
+      $('#image').attr('src', payload.notification.icon);
+      
   });
